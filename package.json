@@ -1,0 +1,40 @@
+{
+  "name": "frontend-starter-sandbox",
+  "version": "1.0.0",
+  "description": "Это песочница для Frontend Starter Tutorial",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-register tests/* & exit 0",
+    "build": "webpack & exit 0",
+    "start": "webpack-dev-server",
+    "lint": "eslint . & exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-register": "^6.24.0",
+    "css-loader": "^0.26.4",
+    "eslint": "^3.8.1",
+    "eslint-loader": "^1.6.3",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "material-ui": "^0.16.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-tap-event-plugin": "^2.0.1"
+  }
+}
