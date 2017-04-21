@@ -5,7 +5,7 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 export default class Question extends React.Component {
     render() {
         return (
-            <Card style={{maxWidth: '600px'}}>
+            <Card style={{maxWidth: '600px', marginBottom: '10px'}}>
                 <CardTitle title={'Вопрос № ' + this.props.index} />
                 {this.props.image &&
                     <CardMedia>
