@@ -15,7 +15,8 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader", "eslint-loader"]
       },
-      { test: /\.css$/, loader: "style-loader!css-loader?modules" }
+      { test: /\.css$/, loader: "style-loader!css-loader?modules" },
+      { test: /\.(jpg|png|gif)$/, exclude: /node_modules/, use: "file-loader" }
     ]
   }
 };
