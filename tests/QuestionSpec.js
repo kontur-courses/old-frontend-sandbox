@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Question from '../src/components/Question.jsx';
+import Question from '../src/Quiz/components/Question.jsx';
 
 describe('<Question />', () => {
 

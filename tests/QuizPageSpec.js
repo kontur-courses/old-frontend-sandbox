@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import QuizPage from '../src/components/QuizPage.jsx';
+import QuizPage from '../src/Quiz/components/QuizPage.jsx';
 
 describe('<QuizPage />', () => {
 

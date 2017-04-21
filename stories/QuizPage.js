@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizPage from '../src/components/QuizPage.jsx';
+import QuizPage from '../src/Quiz/components/QuizPage.jsx';
 import { MuiThemeProvider }  from 'material-ui';
 import { storiesOf, action } from '@kadira/storybook';
 

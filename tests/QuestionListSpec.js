@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import QuestionList from '../src/components/QuestionList.jsx';
+import QuestionList from '../src/Quiz/components/QuestionList.jsx';
 
 describe('<QuestionList />', () => {
     it('должен создавать столько вопросов, сколько в него передано', () => {

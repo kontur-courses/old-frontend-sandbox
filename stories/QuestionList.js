@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionList from '../src/components/QuestionList.jsx';
+import QuestionList from '../src/Quiz/components/QuestionList.jsx';
 import { MuiThemeProvider }  from 'material-ui';
 import { storiesOf, action } from '@kadira/storybook';
 

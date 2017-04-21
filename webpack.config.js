@@ -1,9 +1,12 @@
 var path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: {
+    default: "./src/index.jsx",
+    quiz: "./src/Quiz/index.js"
+  },
   output: {
-    filename: 'bundle.js',
+    filename: "[name].bundle.js",
     publicPath: 'build',
     path: path.resolve(__dirname, 'build')
   },

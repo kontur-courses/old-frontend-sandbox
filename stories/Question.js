@@ -1,5 +1,5 @@
 import React from 'react';
-import Question from '../src/components/Question.jsx';
+import Question from '../src/Quiz/components/Question.jsx';
 import {MuiThemeProvider} from 'material-ui';
 import { storiesOf, action } from '@kadira/storybook';
 import tigerImage from '../src/images/tiger.jpg';
