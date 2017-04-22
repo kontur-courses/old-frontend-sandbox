@@ -1,3 +1,11 @@
+const results = [
+    {name: 'Dohn Joe', score: 120},
+    {name: 'Jann', score: 118},
+    {name: 'Peter', score: 105},
+    {name: 'Helena', score: 100},
+    {name: 'Natalie', score: 70},
+];
+
 export default class FakeApi {
     async getQuestions() {
         await delay(1000);
@@ -24,13 +32,12 @@ export default class FakeApi {
 
     async getResults() {
         await delay(1300);
-        return [
-            {name: 'Dohn Joe', score: 120},
-            {name: 'Jann', score: 118},
-            {name: 'Peter', score: 105},
-            {name: 'Helena', score: 100},
-            {name: 'Natalie', score: 70},
-        ];
+        return results;
+    }
+
+    async addResult(result) {
+        await delay(200);
+        results.push(result);
     }
 }
 

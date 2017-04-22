@@ -1,6 +1,6 @@
 import QuizPage from '../components/QuizPage.jsx';
 import { connect } from 'react-redux';
-import { getQuestions } from '../actions';
+import { getQuestions, addAnswer } from '../actions';
 
 function props(state) {
     return {
@@ -13,7 +13,7 @@ function props(state) {
 function actions (dispatch) {
     return {
         onChange: (value, index) => dispatch({type: 'answerChange', index: index, value: value}),
-        onSubmit: (...args) => console.log(args),
+        onSubmit: (result) => dispatch(addAnswer(result)),
         onLoadQuestions: () => dispatch(getQuestions())
     }
 }

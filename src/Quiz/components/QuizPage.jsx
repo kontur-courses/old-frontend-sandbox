@@ -1,13 +1,15 @@
 import React from 'react';
 import QuestionList from './QuestionList.jsx';
-import { AppBar, RaisedButton, CircularProgress } from 'material-ui';
+import { AppBar, RaisedButton, CircularProgress, TextField } from 'material-ui';
+import { Link } from 'react-router';
 
 export default class QuizPage extends React.Component {
     constructor() {
         super();
         this.state = {
             showResultCounter: false,
-            amountRightAnswers: 0
+            amountRightAnswers: 0,
+            name: ""
         };
     }
 
@@ -41,14 +43,29 @@ export default class QuizPage extends React.Component {
                     />
                 </div>
                 }
+                <div>
+                    <TextField
+                        hintText='Меня зовут'
+                        value={this.state.name}
+                        onChange={(event, value) => this.setState({name: value})}
+                    />
+                </div>
                 {questions && questions.length !== 0 &&
                 <RaisedButton
                     style={{marginTop: '10px'}}
                     label='Проверить'
                     primary
+                    disabled={showResultCounter}
                     onClick={() => this.checkAnswers()}
                 />
                 }
+                
+                <Link to='/result'>
+                    <RaisedButton
+                        style={{marginTop: '10px'}}
+                        label='Посмотреть результаты'
+                    />
+                </Link>
                 {showResultCounter &&
                     <p>
                         Правильных ответов: {amountRightAnswers}/{questions.length}
@@ -59,6 +76,8 @@ export default class QuizPage extends React.Component {
     }
 
     checkAnswers() {
+        if (!this.state.name) return;
+        
         const { questions, answers } = this.props;
         const rightAnswers = answers && answers.filter((item, index) => {
             const variants = questions[index].variants;
@@ -70,6 +89,6 @@ export default class QuizPage extends React.Component {
             showResultCounter: true,
             amountRightAnswers: rightAnswers || 0
         });
-        this.props.onSubmit();
+        this.props.onSubmit({ name: this.state.name, score: rightAnswers || 0 });
     }
 }

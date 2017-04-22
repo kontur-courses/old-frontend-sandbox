@@ -16,3 +16,9 @@ export function getResults () {
         dispatch({type: 'loadedResults', results: result});
     }
 }
+
+export function addAnswer (result) {
+    return async function () {
+        await api.addResult(result);
+    }
+}
