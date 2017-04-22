@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import QuizPage from './containers/QuizPage.js';
+import ResultPage from './containers/ResultPage.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -14,7 +14,7 @@ const store = createStore(reducer, middleware);
 ReactDom.render(
     <Provider store={store}>
         <MuiThemeProvider>
-            <QuizPage />
+            <ResultPage />
         </MuiThemeProvider>
     </Provider>,
     document.getElementById('app'));

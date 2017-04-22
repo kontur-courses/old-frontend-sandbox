@@ -21,11 +21,19 @@ export default function (state = initialState, action) {
             questions: action.questions
         }
     }
-    
+
     if (action.type === 'loadingStart') {
         return {
             ...state,
             loading: true
+        }
+    }
+
+    if (action.type === 'loadedResults') {
+        return {
+            ...state,
+            loading: false,
+            results: action.results
         }
     }
 

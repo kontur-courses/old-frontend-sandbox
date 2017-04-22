@@ -21,6 +21,17 @@ export default class FakeApi {
             },
         ];
     }
+
+    async getResults() {
+        await delay(1300);
+        return [
+            {name: 'Dohn Joe', score: 120},
+            {name: 'Jann', score: 118},
+            {name: 'Peter', score: 105},
+            {name: 'Helena', score: 100},
+            {name: 'Natalie', score: 70},
+        ];
+    }
 }
 
 function delay(timeout) {
