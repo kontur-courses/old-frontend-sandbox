@@ -1,24 +1,7 @@
 const initialState = {
-    questions: [
-        {
-            text: 'Какой вид тигров самый крупный?',
-            variants: [
-                {value: 'amur', label: 'Амурский тигр', isRight: true},
-                {value: 'sumatrae', label: 'Суматранский тигр', isRight: false},
-                {value: 'indochn', label: 'Индокитайский тигр', isRight: false}
-            ]
-        },
-        {
-            text: 'Какая из этих птиц умеет летать?',
-            variants: [
-                {value: 'kiwi', label: 'Киви', isRight: false},
-                {value: 'baklan', label: 'Баклан', isRight: true},
-                {value: 'raphinae', label: 'Дронт', isRight: false},
-                {value: 'pinguin', label: 'Императорский пингвин', isRight: false}
-            ]
-        },
-    ],
-    answers: []
+    questions: null,
+    answers: [],
+    loading: false
 };
 
 export default function (state = initialState, action) {
@@ -28,6 +11,21 @@ export default function (state = initialState, action) {
         return {
             ...state,
             answers: newAnswers
+        }
+    }
+
+    if (action.type === 'loadedQuestions') {
+        return {
+            ...state,
+            loading: false,
+            questions: action.questions
+        }
+    }
+    
+    if (action.type === 'loadingStart') {
+        return {
+            ...state,
+            loading: true
         }
     }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import QuestionList from './QuestionList.jsx';
-import { AppBar, RaisedButton } from 'material-ui'
+import { AppBar, RaisedButton, CircularProgress } from 'material-ui';
 
 export default class QuizPage extends React.Component {
     constructor() {
@@ -9,6 +9,12 @@ export default class QuizPage extends React.Component {
             showResultCounter: false,
             amountRightAnswers: 0
         };
+    }
+
+    componentWillMount() {
+        if (!this.props.questions && this.props.onLoadQuestions) {
+            this.props.onLoadQuestions();
+        }
     }
 
     render() {
@@ -21,6 +27,12 @@ export default class QuizPage extends React.Component {
                     title='Викторина'
                     showMenuIconButton={false}
                 />
+                {this.props.loading &&
+                <CircularProgress
+                    style={{margin: '50px auto', display: 'block'}}
+                    size={80}
+                />
+                }
                 {questions && questions.length !== 0 &&
                 <div style={{marginTop: '20px'}}>
                     <QuestionList

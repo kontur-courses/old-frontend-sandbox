@@ -29,6 +29,7 @@ storiesOf('QuizPage', module)
             <QuizPage
                 onChange={action('onChange')}
                 onSubmit={action('onSubmit')}
+                onLoadQuestions={action('onLoadQuestions')}
             />
         </MuiThemeProvider>
     ))
@@ -38,6 +39,7 @@ storiesOf('QuizPage', module)
                 questions={questions}
                 onChange={action('onChange')}
                 onSubmit={action('onSubmit')}
+                onLoadQuestions={action('onLoadQuestions')}
             />
         </MuiThemeProvider>
     ));
